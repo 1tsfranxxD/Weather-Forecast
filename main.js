@@ -1,6 +1,4 @@
 const monday = {
-    name: "Харьков",
-    inclined: "Харькове",
     temperature: [-2, -3, -4, 0],
     feelsLike: [-4, -6, -8, -2],
     pressure: [750, 750, 749, 747],
