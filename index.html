@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>sinoptikon</title>
+</head>
+<body>
+    <!--        NAV        -->
+    <nav class="nav section">
+        <div class="nav-block block">
+            <h1>sinoptikon</h1>
+            <div class="search-block">
+                <input>
+                <button class="search"><img src="assets/img/search.png" alt=""></button>
+            </div>
+        </div>
+    </nav>
+    <!--        END NAV        -->
+
+    <!--        TITLE        -->
+    <section class="section" id="main">
+        <div class="block-1">
+            <h2><span>Погода</span> в Харькове</h2>
+            <p>Областной центр Харьковской области</p>
+        </div>
+    </section>
+    <!--        END TITLE        -->
+
+    <!--        WEATHER        -->
+    <section class="section">
+        <div class="external-block">
+            <div class="block">
+                <div class="cell cell.none" id="btn1">
+                    <p>Понедельник</p>
+                    <h3>29</h3>
+                    <p>января</p>
+                    <img id="iconWeatherMonday" src="" alt="">
+                    <div class="mini-cell">
+                        <div class="min">
+                            <p>мин.</p>
+                            <h4 id="minTempMonday"></h4>
+                        </div>
+                        <div class="max">
+                            <p>макс.</p>
+                            <h4 id="maxTempMonday"></h4>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="cell cell.none" id="btn2">
+                    <p>Вторник</p>
+                    <h3>30</h3>
+                    <p>января</p>
+                    <img id="iconWeatherTuesday" src="" alt="">
+                    <div class="mini-cell">
+                        <div class="min">
+                            <p>мин.</p>
+                            <h4 id="minTempTuesday"></h4>
+                        </div>
+                        <div class="max">
+                            <p>макс.</p>
+                            <h4 id="maxTempTuesday"></h4>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="cell cell.none" id="btn3">
+                    <p>Среда</p>
+                    <h3>31</h3>
+                    <p>января</p>
+                    <img id="iconWeatherWednesday" src="" alt="">
+                    <div class="mini-cell">
+                        <div class="min">
+                            <p>мин.</p>
+                            <h4 id="minTempWednesday"></h4>
+                        </div>
+                        <div class="max">
+                            <p>макс.</p>
+                            <h4 id="maxTempWednesday"></h4>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="cell cell.none" id="btn4">
+                    <p>Четверг</p>
+                    <h3>01</h3>
+                    <p>Февраля</p>
+                    <img id="iconWeatherThursday" src="" alt="">
+                    <div class="mini-cell">
+                        <div class="min">
+                            <p>мин.</p>
+                            <h4 id="minTempThursday"></h4>
+                        </div>
+                        <div class="max">
+                            <p>макс.</p>
+                            <h4 id="maxTempThursday"></h4>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="cell cell.none" id="btn5">
+                    <p>Пятница</p>
+                    <h3>02</h3>
+                    <p>Февраля</p>
+                    <img id="iconWeatherFriday" src="" alt="">
+                    <div class="mini-cell">
+                        <div class="min">
+                            <p>мин.</p>
+                            <h4 id="minTempFriday"></h4>
+                        </div>
+                        <div class="max">
+                            <p>макс.</p>
+                            <h4 id="maxTempFriday"></h4>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="cell cell.none" id="btn6">
+                    <p>Суботта</p>
+                    <h3 class="holiday">03</h3>
+                    <p>Февраля</p>
+                    <img id="iconWeatherSaturday" src="" alt="">
+                    <div class="mini-cell">
+                        <div class="min">
+                            <p>мин.</p>
+                            <h4 id="minTempSaturday"></h4>
+                        </div>
+                        <div class="max">
+                            <p>макс.</p>
+                            <h4 id="maxTempSaturday"></h4>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="cell cell.none" id="btn7">
+                    <p>Воскресенье</p>
+                    <h3 class="holiday">04</h3>
+                    <p>Февраля</p>
+                    <img id="iconWeatherSunday" src="" alt="">
+                    <div class="mini-cell">
+                        <div class="min">
+                            <p>мин.</p>
+                            <h4 id="minTempSunday"></h4>
+                        </div>
+                        <div class="max">
+                            <p>макс.</p>
+                            <h4 id="maxTempSunday"></h4>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </section>
+    <!--        END WEATHER        -->
+
+    <!--        DESCRIPTION        -->
+    <section class="section">
+        <div class="block-2 block-2.show" id="div1">
+            <div class="left-block">
+                <div class="mr-top">
+                    <h4>Понедельник</h4>
+                    <h3>29</h3>
+                    <h4>января</h4>
+                </div>
+                <div class="info"><p>Восход <span id="timeSunriseMonday">00:00</span> Закат <span id="timeSunsetMonday">00:00</span></p></div>
+            </div>
+            <div class="table-block">
+                <table id="weatherTable1">
+                    <tr>
+                        <th></th>
+                        <th>ночь</th>
+                        <th>утро</th>
+                        <th>день</th>
+                        <th>вечер</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="color-gray">2:00</td>
+                        <td class="color-gray">8:00</td>
+                        <td class="color-gray">14:00</td>
+                        <td class="color-gray">20:00</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="white-color"><img class="iconWeather" id="icon1" src="" alt=""></td>
+                        <td class="white-color"><img class="iconWeather" id="icon1" src="" alt=""></td>
+                        <td class="white-color"><img class="iconWeather" id="icon1" src="" alt=""></td>
+                        <td class="white-color"><img class="iconWeather" id="icon1" src="" alt=""></td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Температура, °C&nbsp</th>
+                        <td id="temp1" class="white-color">0</td>
+                        <td id="temp1" class="white-color">0</td>
+                        <td id="temp1" class="white-color">0</td>
+                        <td id="temp1" class="white-color">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Чувствуется как&nbsp</th>
+                        <td class="color-gray" id="feels1">0</td>
+                        <td class="color-gray" id="feels1">0</td>
+                        <td class="color-gray" id="feels1">0</td>
+                        <td class="color-gray" id="feels1">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Давление, мм&nbsp</th>
+                        <td id="pressure1">0</td>
+                        <td id="pressure1">0</td>
+                        <td id="pressure1">0</td>
+                        <td id="pressure1">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Влажность, %&nbsp</th>
+                        <td id="humidity1">0</td>
+                        <td id="humidity1">0</td>
+                        <td id="humidity1">0</td>
+                        <td id="humidity1">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Ветер, м/сек&nbsp</th>
+                        <td id="wind1">0</td>
+                        <td id="wind1">0</td>
+                        <td id="wind1">0</td>
+                        <td id="wind1">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Вероятность&nbsp<br>оскадков, % &nbsp</th>
+                        <td id="precipitation1">0</td>
+                        <td id="precipitation1">0</td>
+                        <td id="precipitation1">0</td>
+                        <td id="precipitation1">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="absolute-block">
+                <p>
+                    В Харькове на протяжении всего дня будет стоять облачная погода. Мелкий дождь, который днем придет на смену мелкому мокрому снегу, будет продолжать идти до позднего вечера.</p>
+                <p><span>Народный прогноз погоды:</span> В прежние времена по этому дню судили о будущей зиме. Каким этот день будет с утра до полудня, такой будет и первая половина следующей зимы, а погода с полудня до вечера указывает на вторую половину зимы. Густой туман предвещал мор скота, а ясная погода говорила о том, что будет хороший год.</p>
+            </div>
+        </div>
+
+        <div class="block-2 block-2.show" id="div2">
+            <div class="left-block">
+                <div class="mr-top">
+                    <h4>Вторник</h4>
+                    <h3>30</h3>
+                    <h4>января</h4>
+                </div>
+                <div class="info"><p>Восход <span id="timeSunriseTuesday">00:00</span> Закат <span id="timeSunsetTuesday">00:00</span></p></div>
+            </div>
+            <div class="table-block">
+                <table id="weatherTable2">
+                    <tr>
+                        <th></th>
+                        <th>ночь</th>
+                        <th>утро</th>
+                        <th>день</th>
+                        <th>вечер</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="color-gray">2:00</td>
+                        <td class="color-gray">8:00</td>
+                        <td class="color-gray">14:00</td>
+                        <td class="color-gray">20:00</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><img class="iconWeather" id="icon2" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon2" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon2" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon2" src="" alt=""></td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Температура, °C&nbsp</th>
+                        <td id="temp2">0</td>
+                        <td id="temp2">0</td>
+                        <td id="temp2">0</td>
+                        <td id="temp2">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Чувствуется как&nbsp</th>
+                        <td class="color-gray" id="feels2">0</td>
+                        <td class="color-gray" id="feels2">0</td>
+                        <td class="color-gray" id="feels2">0</td>
+                        <td class="color-gray" id="feels2">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Давление, мм&nbsp</th>
+                        <td id="pressure2">0</td>
+                        <td id="pressure2">0</td>
+                        <td id="pressure2">0</td>
+                        <td id="pressure2">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Влажность, %&nbsp</th>
+                        <td id="humidity2">0</td>
+                        <td id="humidity2">0</td>
+                        <td id="humidity2">0</td>
+                        <td id="humidity2">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Ветер, м/сек&nbsp</th>
+                        <td id="wind2">0</td>
+                        <td id="wind2">0</td>
+                        <td id="wind2">0</td>
+                        <td id="wind2">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Вероятность&nbsp<br>оскадков, % &nbsp</th>
+                        <td id="precipitation2">0</td>
+                        <td id="precipitation2">0</td>
+                        <td id="precipitation2">0</td>
+                        <td id="precipitation2">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="absolute-block">
+                <p>
+                    В Харькове на протяжении всего дня будет стоять облачная погода. Мелкий дождь, который днем придет на смену мелкому мокрому снегу, будет продолжать идти до позднего вечера.</p>
+                <p><span>Народный прогноз погоды:</span> В прежние времена по этому дню судили о будущей зиме. Каким этот день будет с утра до полудня, такой будет и первая половина следующей зимы, а погода с полудня до вечера указывает на вторую половину зимы. Густой туман предвещал мор скота, а ясная погода говорила о том, что будет хороший год.</p>
+            </div>
+        </div>
+
+        <div class="block-2 block-2.show" id="div3">
+            <div class="left-block">
+                <div class="mr-top">
+                    <h4>Среда</h4>
+                    <h3>31</h3>
+                    <h4>января</h4>
+                </div>
+                <div class="info"><p>Восход <span id="timeSunriseWednesday">00:00</span> Закат <span id="timeSunsetWednesday">00:00</span></p></div>
+            </div>
+            <div class="table-block">
+                <table id="weatherTable3">
+                    <tr>
+                        <th></th>
+                        <th>ночь</th>
+                        <th>утро</th>
+                        <th>день</th>
+                        <th>вечер</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="color-gray">2:00</td>
+                        <td class="color-gray">8:00</td>
+                        <td class="color-gray">14:00</td>
+                        <td class="color-gray">20:00</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><img class="iconWeather" id="icon3" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon3" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon3" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon3" src="" alt=""></td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Температура, °C&nbsp</th>
+                        <td id="temp3">0</td>
+                        <td id="temp3">0</td>
+                        <td id="temp3">0</td>
+                        <td id="temp3">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Чувствуется как&nbsp</th>
+                        <td class="color-gray" id="feels3">0</td>
+                        <td class="color-gray" id="feels3">0</td>
+                        <td class="color-gray" id="feels3">0</td>
+                        <td class="color-gray" id="feels3">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Давление, мм&nbsp</th>
+                        <td id="pressure3">0</td>
+                        <td id="pressure3">0</td>
+                        <td id="pressure3">0</td>
+                        <td id="pressure3">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Влажность, %&nbsp</th>
+                        <td id="humidity3">0</td>
+                        <td id="humidity3">0</td>
+                        <td id="humidity3">0</td>
+                        <td id="humidity3">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Ветер, м/сек&nbsp</th>
+                        <td id="wind3">0</td>
+                        <td id="wind3">0</td>
+                        <td id="wind3">0</td>
+                        <td id="wind3">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Вероятность&nbsp<br>оскадков, % &nbsp</th>
+                        <td id="precipitation3">0</td>
+                        <td id="precipitation3">0</td>
+                        <td id="precipitation3">0</td>
+                        <td id="precipitation3">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="absolute-block">
+                <p>
+                    В Харькове на протяжении всего дня будет стоять облачная погода. Мелкий дождь, который днем придет на смену мелкому мокрому снегу, будет продолжать идти до позднего вечера.</p>
+                <p><span>Народный прогноз погоды:</span> В прежние времена по этому дню судили о будущей зиме. Каким этот день будет с утра до полудня, такой будет и первая половина следующей зимы, а погода с полудня до вечера указывает на вторую половину зимы. Густой туман предвещал мор скота, а ясная погода говорила о том, что будет хороший год.</p>
+            </div>
+        </div>
+
+        <div class="block-2 block-2.show" id="div4">
+            <div class="left-block">
+                <div class="mr-top">
+                    <h4>Четверг</h4>
+                    <h3>01</h3>
+                    <h4>февраля</h4>
+                </div>
+                <div class="info"><p>Восход <span id="timeSunriseThursday">00:00</span> Закат <span id="timeSunsetThursday">00:00</span></p></div>
+            </div>
+            <div class="table-block">
+                <table id="weatherTable4">
+                    <tr>
+                        <th></th>
+                        <th>ночь</th>
+                        <th>утро</th>
+                        <th>день</th>
+                        <th>вечер</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="color-gray">2:00</td>
+                        <td class="color-gray">8:00</td>
+                        <td class="color-gray">14:00</td>
+                        <td class="color-gray">20:00</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><img class="iconWeather" id="icon4" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon4" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon4" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon4" src="" alt=""></td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Температура, °C&nbsp</th>
+                        <td id="temp4">0</td>
+                        <td id="temp4">0</td>
+                        <td id="temp4">0</td>
+                        <td id="temp4">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Чувствуется как&nbsp</th>
+                        <td class="color-gray" id="feels4">0</td>
+                        <td class="color-gray" id="feels4">0</td>
+                        <td class="color-gray" id="feels4">0</td>
+                        <td class="color-gray" id="feels4">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Давление, мм&nbsp</th>
+                        <td id="pressure4">0</td>
+                        <td id="pressure4">0</td>
+                        <td id="pressure4">0</td>
+                        <td id="pressure4">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Влажность, %&nbsp</th>
+                        <td id="humidity4">0</td>
+                        <td id="humidity4">0</td>
+                        <td id="humidity4">0</td>
+                        <td id="humidity4">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Ветер, м/сек&nbsp</th>
+                        <td id="wind4">0</td>
+                        <td id="wind4">0</td>
+                        <td id="wind4">0</td>
+                        <td id="wind4">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Вероятность&nbsp<br>оскадков, % &nbsp</th>
+                        <td id="precipitation4">0</td>
+                        <td id="precipitation4">0</td>
+                        <td id="precipitation4">0</td>
+                        <td id="precipitation4">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="absolute-block">
+                <p>
+                    В Харькове на протяжении всего дня будет стоять облачная погода. Мелкий дождь, который днем придет на смену мелкому мокрому снегу, будет продолжать идти до позднего вечера.</p>
+                <p><span>Народный прогноз погоды:</span> В прежние времена по этому дню судили о будущей зиме. Каким этот день будет с утра до полудня, такой будет и первая половина следующей зимы, а погода с полудня до вечера указывает на вторую половину зимы. Густой туман предвещал мор скота, а ясная погода говорила о том, что будет хороший год.</p>
+            </div>
+        </div>
+
+        <div class="block-2 block-2.show" id="div5">
+            <div class="left-block">
+                <div class="mr-top">
+                    <h4>Пятница</h4>
+                    <h3>02</h3>
+                    <h4>февраля</h4>
+                </div>
+                <div class="info"><p>Восход <span id="timeSunriseFriday">00:00</span> Закат <span id="timeSunsetFriday">00:00</span></p></div>
+            </div>
+            <div class="table-block">
+                <table id="weatherTable5">
+                    <tr>
+                        <th></th>
+                        <th>ночь</th>
+                        <th>утро</th>
+                        <th>день</th>
+                        <th>вечер</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="color-gray">2:00</td>
+                        <td class="color-gray">8:00</td>
+                        <td class="color-gray">14:00</td>
+                        <td class="color-gray">20:00</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><img class="iconWeather" id="icon5" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon5" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon5" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon5" src="" alt=""></td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Температура, °C&nbsp</th>
+                        <td id="temp5">0</td>
+                        <td id="temp5">0</td>
+                        <td id="temp5">0</td>
+                        <td id="temp5">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Чувствуется как&nbsp</th>
+                        <td class="color-gray" id="feels5">0</td>
+                        <td class="color-gray" id="feels5">0</td>
+                        <td class="color-gray" id="feels5">0</td>
+                        <td class="color-gray" id="feels5">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Давление, мм&nbsp</th>
+                        <td id="pressure5">0</td>
+                        <td id="pressure5">0</td>
+                        <td id="pressure5">0</td>
+                        <td id="pressure5">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Влажность, %&nbsp</th>
+                        <td id="humidity5">0</td>
+                        <td id="humidity5">0</td>
+                        <td id="humidity5">0</td>
+                        <td id="humidity5">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Ветер, м/сек&nbsp</th>
+                        <td id="wind5">0</td>
+                        <td id="wind5">0</td>
+                        <td id="wind5">0</td>
+                        <td id="wind5">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Вероятность&nbsp<br>оскадков, % &nbsp</th>
+                        <td id="precipitation5">0</td>
+                        <td id="precipitation5">0</td>
+                        <td id="precipitation5">0</td>
+                        <td id="precipitation5">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="absolute-block">
+                <p>
+                    В Харькове на протяжении всего дня будет стоять облачная погода. Мелкий дождь, который днем придет на смену мелкому мокрому снегу, будет продолжать идти до позднего вечера.</p>
+                <p><span>Народный прогноз погоды:</span> В прежние времена по этому дню судили о будущей зиме. Каким этот день будет с утра до полудня, такой будет и первая половина следующей зимы, а погода с полудня до вечера указывает на вторую половину зимы. Густой туман предвещал мор скота, а ясная погода говорила о том, что будет хороший год.</p>
+            </div>
+        </div>
+
+        <div class="block-2 block-2.show" id="div6">
+            <div class="left-block">
+                <div class="mr-top">
+                    <h4>Суботта</h4>
+                    <h3>03</h3>
+                    <h4>февраля</h4>
+                </div>
+                <div class="info"><p>Восход <span id="timeSunriseSaturday">00:00</span> Закат <span id="timeSunsetSaturday">00:00</span></p></div>
+            </div>
+            <div class="table-block">
+                <table id="weatherTable6">
+                    <tr>
+                        <th></th>
+                        <th>ночь</th>
+                        <th>утро</th>
+                        <th>день</th>
+                        <th>вечер</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="color-gray">2:00</td>
+                        <td class="color-gray">8:00</td>
+                        <td class="color-gray">14:00</td>
+                        <td class="color-gray">20:00</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><img class="iconWeather" id="icon6" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon6" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon6" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon6" src="" alt=""></td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Температура, °C&nbsp</th>
+                        <td id="temp6">0</td>
+                        <td id="temp6">0</td>
+                        <td id="temp6">0</td>
+                        <td id="temp6">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Чувствуется как&nbsp</th>
+                        <td class="color-gray" id="feels6">0</td>
+                        <td class="color-gray" id="feels6">0</td>
+                        <td class="color-gray" id="feels6">0</td>
+                        <td class="color-gray" id="feels6">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Давление, мм&nbsp</th>
+                        <td id="pressure6">0</td>
+                        <td id="pressure6">0</td>
+                        <td id="pressure6">0</td>
+                        <td id="pressure6">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Влажность, %&nbsp</th>
+                        <td id="humidity6">0</td>
+                        <td id="humidity6">0</td>
+                        <td id="humidity6">0</td>
+                        <td id="humidity6">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Ветер, м/сек&nbsp</th>
+                        <td id="wind6">0</td>
+                        <td id="wind6">0</td>
+                        <td id="wind6">0</td>
+                        <td id="wind6">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Вероятность&nbsp<br>оскадков, % &nbsp</th>
+                        <td id="precipitation6">0</td>
+                        <td id="precipitation6">0</td>
+                        <td id="precipitation6">0</td>
+                        <td id="precipitation6">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="absolute-block">
+                <p>
+                    В Харькове на протяжении всего дня будет стоять облачная погода. Мелкий дождь, который днем придет на смену мелкому мокрому снегу, будет продолжать идти до позднего вечера.</p>
+                <p><span>Народный прогноз погоды:</span> В прежние времена по этому дню судили о будущей зиме. Каким этот день будет с утра до полудня, такой будет и первая половина следующей зимы, а погода с полудня до вечера указывает на вторую половину зимы. Густой туман предвещал мор скота, а ясная погода говорила о том, что будет хороший год.</p>
+            </div>
+        </div>
+
+        <div class="block-2 block-2.show" id="div7">
+            <div class="left-block">
+                <div class="mr-top">
+                    <h4>Воскресенье</h4>
+                    <h3>04</h3>
+                    <h4>февраля</h4>
+                </div>
+                <div class="info"><p>Восход <span id="timeSunriseSunday">00:00</span> Закат <span id="timeSunsetSunday">00:00</span></p></div>
+            </div>
+            <div class="table-block">
+                <table id="weatherTable7">
+                    <tr>
+                        <th></th>
+                        <th>ночь</th>
+                        <th>утро</th>
+                        <th>день</th>
+                        <th>вечер</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="color-gray">2:00</td>
+                        <td class="color-gray">8:00</td>
+                        <td class="color-gray">14:00</td>
+                        <td class="color-gray">20:00</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td><img class="iconWeather" id="icon7" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon7" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon7" src="" alt=""></td>
+                        <td><img class="iconWeather" id="icon7" src="" alt=""></td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Температура, °C&nbsp</th>
+                        <td id="temp7">0</td>
+                        <td id="temp7">0</td>
+                        <td id="temp7">0</td>
+                        <td id="temp7">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Чувствуется как&nbsp</th>
+                        <td class="color-gray" id="feels7">0</td>
+                        <td class="color-gray" id="feels7">0</td>
+                        <td class="color-gray" id="feels7">0</td>
+                        <td class="color-gray" id="feels7">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Давление, мм&nbsp</th>
+                        <td id="pressure7">0</td>
+                        <td id="pressure7">0</td>
+                        <td id="pressure7">0</td>
+                        <td id="pressure7">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Влажность, %&nbsp</th>
+                        <td id="humidity7">0</td>
+                        <td id="humidity7">0</td>
+                        <td id="humidity7">0</td>
+                        <td id="humidity7">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Ветер, м/сек&nbsp</th>
+                        <td id="wind7">0</td>
+                        <td id="wind7">0</td>
+                        <td id="wind7">0</td>
+                        <td id="wind7">0</td>
+                    </tr>
+                    <tr>
+                        <th class="color-gray txt-align-end">Вероятность&nbsp<br>оскадков, % &nbsp</th>
+                        <td id="precipitation7">0</td>
+                        <td id="precipitation7">0</td>
+                        <td id="precipitation7">0</td>
+                        <td id="precipitation7">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="absolute-block">
+                <p>
+                    В Харькове на протяжении всего дня будет стоять облачная погода. Мелкий дождь, который днем придет на смену мелкому мокрому снегу, будет продолжать идти до позднего вечера.</p>
+                <p><span>Народный прогноз погоды:</span> В прежние времена по этому дню судили о будущей зиме. Каким этот день будет с утра до полудня, такой будет и первая половина следующей зимы, а погода с полудня до вечера указывает на вторую половину зимы. Густой туман предвещал мор скота, а ясная погода говорила о том, что будет хороший год.</p>
+            </div>
+        </div>
+    </section>
+    <!--        END DESCRIPTION        -->
+
+    <!--        FOOTER       -->
+    <footer class="section footer">
+        <p>Powered by <a href="">1tsfranxx</a></p>
+    </footer>
+    <!--        END FOOTER        -->
+
+
+    <script src="main.js"></script>
+</body>
+</html>
